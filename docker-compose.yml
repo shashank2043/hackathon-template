@@ -12,6 +12,7 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      - ./postgres-init/init.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 5s
@@ -69,7 +70,7 @@ services:
       EUREKA_SERVER_URL: http://discovery-server:8761/eureka/
       DB_HOST: postgres
       DB_PORT: 5432
-      DB_NAME: hackathon_db
+      DB_NAME: auth_db
       DB_USER: postgres
       DB_PASSWORD: postgres
     depends_on:
@@ -90,7 +91,7 @@ services:
       EUREKA_SERVER_URL: http://discovery-server:8761/eureka/
       DB_HOST: postgres
       DB_PORT: 5432
-      DB_NAME: hackathon_db
+      DB_NAME: notification_db
       DB_USER: postgres
       DB_PASSWORD: postgres
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092

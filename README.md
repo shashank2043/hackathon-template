@@ -61,6 +61,45 @@ To spin up the entire application stack including the PostgreSQL databases, run:
 
 ---
 
+## Running Locally (Without Docker)
+
+Each microservice contains a `.env` file with configuration variables mapping to `localhost` services. To run the Spring Boot applications directly on your host machine:
+
+### 1. Set up Databases
+Ensure a local PostgreSQL instance is running on port `5432` with databases `auth_db` and `notification_db` created (you can run the SQL script in [postgres-init/init.sql](file:///D:/Codes/hackathon-template/postgres-init/init.sql)).
+
+### 2. Export `.env` Variables
+You must load the `.env` parameters into your shell before starting the applications.
+
+*   **In Git Bash (Windows/Linux/macOS)**:
+    Navigate to the service directory and run:
+    ```bash
+    export $(grep -v '^#' .env | xargs)
+    mvn spring-boot:run
+    ```
+*   **In PowerShell (Windows)**:
+    Navigate to the service directory and run:
+    ```powershell
+    Get-Content .env | ForEach-Object {
+        if ($_ -notmatch '^\s*#' -and $_ -like '*=*') {
+            $name, $value = $_ -split '=', 2
+            [System.Environment]::SetEnvironmentVariable($name.Trim(), $value.Trim(), [System.EnvironmentVariableTarget]::Process)
+        }
+    }
+    mvn spring-boot:run
+    ```
+*   **In IDEs (IntelliJ IDEA / Eclipse / VS Code)**:
+    Install an environment loader plugin (such as the **EnvFile** plugin for IntelliJ) and configure it to read the local `.env` file in the Run/Debug Configurations panel.
+
+### 3. Startup Order
+To ensure service dependencies register properly, start the services in this order:
+1. `config-server` (Port 8888)
+2. `discovery-server` (Port 8761)
+3. `auth-service` (Port 8081) & `notification-service` (Port 8082)
+4. `api-gateway` (Port 8080)
+
+---
+
 ## Step-by-Step: Adding a New Service (e.g., Product Service)
 
 During a hackathon, you can spin up a new service in under 5 minutes:
