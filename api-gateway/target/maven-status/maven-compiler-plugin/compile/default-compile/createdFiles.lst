@@ -1,3 +1,0 @@
-com\hackathon\gateway\ApiGatewayApplication.class
-com\hackathon\gateway\filter\LoggingFilter.class
-com\hackathon\gateway\filter\JwtAuthenticationFilter.class
