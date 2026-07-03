@@ -10,4 +10,4 @@ Identity and session microservice running on port `8081`.
 * `GET /auth/profile`: Look up user details based on gateway routing headers.
 
 ## DB Schema
-Uses Flyway migrations (`db/migration/V1__init.sql`) to generate `users`, `roles`, `user_roles`, and `refresh_tokens` tables in PostgreSQL, pre-populating standard admin and user profiles.
+Uses JPA/Hibernate schema auto-generation to generate `users`, `roles`, `user_roles`, and `refresh_tokens` tables in MySQL, with a `DatabaseInitializer` to pre-populate standard admin and user profiles.

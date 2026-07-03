@@ -50,15 +50,15 @@ const LandingPage = () => {
     },
     {
       title: 'Dockerized Infrastructure',
-      desc: 'Instantly spin up PostgreSQL database migrations, discovery registries, config stores, and frontend panels.',
+      desc: 'Instantly spin up MySQL database instances, discovery registries, config stores, and frontend panels.',
       icon: <IntegrationInstructionsIcon color="primary" sx={{ fontSize: 36 }} />,
     },
   ];
 
   const technologies = [
-    'Java 21', 'Spring Boot 3.4', 'Spring Cloud', 'PostgreSQL', 
+    'Java 21', 'Spring Boot 3.4', 'Spring Cloud', 'MySQL', 
     'React 19', 'Material UI v6', 'Redux Toolkit', 'Axios Interceptors',
-    'Docker Compose', 'Flyway Migrations', 'Kafka Ready', 'Framer Motion'
+    'Docker Compose', 'JPA Initialization', 'Kafka Ready', 'Framer Motion'
   ];
 
   const faqs = [

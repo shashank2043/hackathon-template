@@ -1,20 +1,18 @@
 version: '3.8'
 
 services:
-  postgres:
-    image: postgres:16-alpine
-    container_name: hackathon-postgres
+  mysql:
+    image: mysql:8.0
+    container_name: hackathon-mysql
     ports:
-      - "5432:5432"
+      - "3306:3306"
     environment:
-      POSTGRES_DB: hackathon_db
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: hackathon_db
     volumes:
-      - postgres_data:/var/lib/postgresql/data
-      - ./postgres-init/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_data:/var/lib/mysql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -ppassword"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -68,13 +66,13 @@ services:
     environment:
       CONFIG_SERVER_URL: http://config-server:8888
       EUREKA_SERVER_URL: http://discovery-server:8761/eureka/
-      DB_HOST: postgres
-      DB_PORT: 5432
+      DB_HOST: mysql
+      DB_PORT: 3306
       DB_NAME: auth_db
-      DB_USER: postgres
-      DB_PASSWORD: postgres
+      DB_USER: root
+      DB_PASSWORD: password
     depends_on:
-      postgres:
+      mysql:
         condition: service_healthy
       config-server:
         condition: service_healthy
@@ -89,14 +87,14 @@ services:
     environment:
       CONFIG_SERVER_URL: http://config-server:8888
       EUREKA_SERVER_URL: http://discovery-server:8761/eureka/
-      DB_HOST: postgres
-      DB_PORT: 5432
+      DB_HOST: mysql
+      DB_PORT: 3306
       DB_NAME: notification_db
-      DB_USER: postgres
-      DB_PASSWORD: postgres
+      DB_USER: root
+      DB_PASSWORD: password
       KAFKA_BOOTSTRAP_SERVERS: kafka:9092
     depends_on:
-      postgres:
+      mysql:
         condition: service_healthy
       config-server:
         condition: service_healthy
@@ -104,4 +102,4 @@ services:
         condition: service_healthy
 
 volumes:
-  postgres_data:
+  mysql_data:

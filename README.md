@@ -13,7 +13,7 @@ graph TD
     Gateway -->|Proxy Service LB| AuthService[Auth Service - Port 8081]
     Gateway -->|Proxy Service LB| NotificationService[Notification Service - Port 8082]
     
-    AuthService -->|Read Schema / State| DB[(PostgreSQL Database)]
+    AuthService -->|Read Schema / State| DB[(MySQL Database)]
     NotificationService -->|Read Schema / Logs| DB
     
     AllServices[...] -->|Fetch configuration| ConfigServer[Config Server - Port 8888]
@@ -35,7 +35,7 @@ graph TD
 
 ## Quick Start (Run with Docker Compose)
 
-To spin up the entire application stack including the PostgreSQL databases, run:
+To spin up the entire application stack including the MySQL databases, run:
 
 1. **Compile Backend Services**:
    ```bash
@@ -66,7 +66,7 @@ To spin up the entire application stack including the PostgreSQL databases, run:
 Each microservice contains a `.env` file with configuration variables mapping to `localhost` services. To run the Spring Boot applications directly on your host machine:
 
 ### 1. Set up Databases
-Ensure a local PostgreSQL instance is running on port `5432` with databases `auth_db` and `notification_db` created (you can run the SQL script in [postgres-init/init.sql](file:///D:/Codes/hackathon-template/postgres-init/init.sql)).
+Ensure a local MySQL instance is running on port `3306`. The microservices will automatically create their respective databases (`auth_db` and `notification_db`) on startup using the `createDatabaseIfNotExist=true` parameter in their JDBC connection URLs.
 
 ### 2. Export `.env` Variables
 You must load the `.env` parameters into your shell before starting the applications.
@@ -157,7 +157,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/hackathon_db
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/hackathon_db
   jpa:
     hibernate:
       ddl-auto: update

@@ -8,7 +8,7 @@ Configurations are read from the local classpath repository at `src/main/resourc
 ### Shared Profiles:
 * `application.yml`: Common database configurations, Eureka service URLs, JWT configuration keys, and default Actuator exposure.
 * `api-gateway.yml`: Gateway routing configurations and CORS.
-* `auth-service.yml`: Flyway database migrations and OpenAPI config.
+* `auth-service.yml`: Port and OpenAPI config.
 * `notification-service.yml`: Port mappings and Kafka bootstrap endpoints.
 
 ## Extension
