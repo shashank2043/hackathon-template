@@ -107,7 +107,7 @@ const RegisterPage = () => {
             Sign Up
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-            Create a new hackathon developer account
+            Create a new Vendra developer account
           </Typography>
         </Box>
 

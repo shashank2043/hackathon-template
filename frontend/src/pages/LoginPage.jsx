@@ -94,7 +94,7 @@ const LoginPage = () => {
             Sign In
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-            Access the hackathon developer dashboard
+            Access the Vendra developer dashboard
           </Typography>
         </Box>
 

@@ -208,7 +208,7 @@ export const ProfileMenu = ({ user, onLogout, onNavigateProfile }) => {
       >
         <Box sx={{ px: 2.5, py: 1.5 }}>
           <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>{user?.username || 'User'}</Typography>
-          <Typography variant="body2" color="text.secondary" sx={{ textOverflow: 'ellipsis', overflow: 'hidden' }}>{user?.email || 'user@hackathon.com'}</Typography>
+          <Typography variant="body2" color="text.secondary" sx={{ textOverflow: 'ellipsis', overflow: 'hidden' }}>{user?.email || 'user@vendra.com'}</Typography>
         </Box>
         <Divider />
         <MenuItem onClick={handleProfileClick} sx={{ py: 1 }}>

@@ -1,6 +1,6 @@
 # Production-Quality Full-Stack Microservices Starter Template
 
-An enterprise-grade, highly-configurable full-stack starter kit designed for hackathons. It contains a complete service mesh infrastructure on the backend and a modern UI on the frontend, with business logic completely decoupled to enable fast pivoting.
+An enterprise-grade, highly-configurable full-stack starter kit designed for Vendras. It contains a complete service mesh infrastructure on the backend and a modern UI on the frontend, with business logic completely decoupled to enable fast pivoting.
 
 ---
 
@@ -102,14 +102,14 @@ To ensure service dependencies register properly, start the services in this ord
 
 ## Step-by-Step: Adding a New Service (e.g., Product Service)
 
-During a hackathon, you can spin up a new service in under 5 minutes:
+During a Vendra, you can spin up a new service in under 5 minutes:
 
 ### 1. Create a New Maven Module
 Create a folder `product-service` and add a `pom.xml`:
 ```xml
 <parent>
-    <groupId>com.hackathon</groupId>
-    <artifactId>hackathon-parent</artifactId>
+    <groupId>com.pinnacle.vendra</groupId>
+    <artifactId>vendra</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
 </parent>
@@ -124,7 +124,7 @@ Create a folder `product-service` and add a `pom.xml`:
         <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>
     <dependency>
-        <groupId>com.hackathon</groupId>
+        <groupId>com.pinnacle.vendra</groupId>
         <artifactId>common-library</artifactId>
     </dependency>
     <dependency>
@@ -157,7 +157,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/hackathon_db
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/vendra_db
   jpa:
     hibernate:
       ddl-auto: update
@@ -177,15 +177,15 @@ Open `config-server/src/main/resources/shared/api-gateway.yml` and add a new rou
 ```
 
 ### 5. Add Main Application class
-Create `ProductServiceApplication.java` under package `com.hackathon.product`:
+Create `ProductServiceApplication.java` under package `com.pinnacle.vendra.product`:
 ```java
-package com.hackathon.product;
+package com.pinnacle.vendra.product;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@SpringBootApplication(scanBasePackages = {"com.hackathon.product", "com.hackathon.common"})
+@SpringBootApplication(scanBasePackages = {"com.pinnacle.vendra.product", "com.pinnacle.vendra.common"})
 @EnableDiscoveryClient
 public class ProductServiceApplication {
     public static void main(String[] args) {

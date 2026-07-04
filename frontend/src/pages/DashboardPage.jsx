@@ -290,7 +290,7 @@ const DashboardPage = () => {
                     {user?.username || 'User'}
                   </Typography>
                   <Typography variant="body2" color="text.secondary" noWrap>
-                    {user?.email || 'user@hackathon.com'}
+                    {user?.email || 'user@vendra.com'}
                   </Typography>
                 </Box>
               </Paper>

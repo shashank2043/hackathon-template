@@ -91,7 +91,7 @@ const DashboardLayout = () => {
         <Box display="flex" alignItems="center" gap={1}>
           <LayersIcon color="primary" sx={{ fontSize: 28 }} />
           <Typography variant="h6" sx={{ fontWeight: 800, letterSpacing: '0.5px' }}>
-            HACKATHON
+            Vendra
           </Typography>
         </Box>
         {!isMobile && (
@@ -109,7 +109,7 @@ const DashboardLayout = () => {
         </Avatar>
         <Box sx={{ overflow: 'hidden' }}>
           <Typography variant="subtitle2" sx={{ fontWeight: 700, noWrap: true }}>
-            {user?.username || 'Hackathon User'}
+            {user?.username || 'Vendra User'}
           </Typography>
           <Typography variant="caption" color="text.secondary" sx={{ display: 'block', noWrap: true }}>
             {user?.roles?.[0] || 'ROLE_USER'}
@@ -343,7 +343,7 @@ const DashboardLayout = () => {
             <Typography variant="body2" color="text.secondary">
               {'© '}
               {new Date().getFullYear()}
-              {' Hackathon Inc. Production-Ready Boilerplate. All rights reserved.'}
+              {' Vendra Inc. Production-Ready Boilerplate. All rights reserved.'}
             </Typography>
           </Box>
         </Container>

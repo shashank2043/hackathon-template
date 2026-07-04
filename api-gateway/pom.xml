@@ -3,8 +3,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/xml-4.0.0.xsd">
     <parent>
-        <groupId>com.hackathon</groupId>
-        <artifactId>hackathon-parent</artifactId>
+        <groupId>com.pinnacle.vendra</groupId>
+        <artifactId>vendra</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
@@ -47,7 +47,7 @@
 
         <!-- Common Library (exclude web servlet stack) -->
         <dependency>
-            <groupId>com.hackathon</groupId>
+            <groupId>com.pinnacle.vendra</groupId>
             <artifactId>common-library</artifactId>
             <exclusions>
                 <exclusion>

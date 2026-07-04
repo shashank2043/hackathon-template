@@ -3,12 +3,12 @@ version: '3.8'
 services:
   mysql:
     image: mysql:8.0
-    container_name: hackathon-mysql
+    container_name: vendra-mysql
     ports:
       - "${MYSQL_PORT:-3306}:3306"
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-password}
-      MYSQL_DATABASE: ${DB_NAME:-hackathon_db}
+      MYSQL_DATABASE: ${DB_NAME:-vendra_db}
     volumes:
       - mysql_data:/var/lib/mysql
     healthcheck:
@@ -23,7 +23,7 @@ services:
       dockerfile: Dockerfile
       args:
         SERVICE_PATH: config-server
-    container_name: hackathon-config-server
+    container_name: vendra-config-server
     ports:
       - "${CONFIG_SERVER_PORT:-8888}:8888"
     environment:
@@ -40,7 +40,7 @@ services:
       dockerfile: Dockerfile
       args:
         SERVICE_PATH: discovery-server
-    container_name: hackathon-discovery-server
+    container_name: vendra-discovery-server
     ports:
       - "${DISCOVERY_SERVER_PORT:-8761}:8761"
     environment:
@@ -60,7 +60,7 @@ services:
       dockerfile: Dockerfile
       args:
         SERVICE_PATH: api-gateway
-    container_name: hackathon-api-gateway
+    container_name: vendra-api-gateway
     ports:
       - "${API_GATEWAY_PORT:-8080}:8080"
     environment:
@@ -78,7 +78,7 @@ services:
       dockerfile: Dockerfile
       args:
         SERVICE_PATH: auth-service
-    container_name: hackathon-auth-service
+    container_name: vendra-auth-service
     ports:
       - "${AUTH_SERVICE_PORT:-8081}:8081"
     environment:
@@ -103,7 +103,7 @@ services:
       dockerfile: Dockerfile
       args:
         SERVICE_PATH: notification-service
-    container_name: hackathon-notification-service
+    container_name: vendra-notification-service
     ports:
       - "${NOTIFICATION_SERVICE_PORT:-8082}:8082"
     environment:

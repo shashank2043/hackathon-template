@@ -44,7 +44,7 @@ const NotificationLogPage = () => {
   const dispatch = useDispatch();
   const [logs, setLogs] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [searchRecipient, setSearchRecipient] = useState('user@hackathon.com');
+  const [searchRecipient, setSearchRecipient] = useState('user@vendra.com');
   const [modalOpen, setModalOpen] = useState(false);
 
   // Table pagination state
@@ -64,9 +64,9 @@ const NotificationLogPage = () => {
       }));
       // Set dummy logs in case service is not running locally yet
       setLogs([
-        { id: 1, recipient: 'user@hackathon.com', subject: 'Welcome to Hackathon', body: 'This is a test notification.', type: 'EMAIL', status: 'SENT', sentAt: new Date().toISOString() },
-        { id: 2, recipient: 'user@hackathon.com', subject: 'OTP Verification', body: 'Your code is 1234.', type: 'SMS', status: 'SENT', sentAt: new Date().toISOString() },
-        { id: 3, recipient: 'admin@hackathon.com', subject: 'High CPU Alert', body: 'Server CPU is above 90%.', type: 'PUSH', status: 'FAILED', sentAt: new Date().toISOString() },
+        { id: 1, recipient: 'user@vendra.com', subject: 'Welcome to Vendra', body: 'This is a test notification.', type: 'EMAIL', status: 'SENT', sentAt: new Date().toISOString() },
+        { id: 2, recipient: 'user@vendra.com', subject: 'OTP Verification', body: 'Your code is 1234.', type: 'SMS', status: 'SENT', sentAt: new Date().toISOString() },
+        { id: 3, recipient: 'admin@vendra.com', subject: 'High CPU Alert', body: 'Server CPU is above 90%.', type: 'PUSH', status: 'FAILED', sentAt: new Date().toISOString() },
       ]);
     } finally {
       setLoading(false);
@@ -74,7 +74,7 @@ const NotificationLogPage = () => {
   };
 
   useEffect(() => {
-    fetchHistory('user@hackathon.com');
+    fetchHistory('user@vendra.com');
   }, []);
 
   const handleSearchSubmit = (e) => {
@@ -85,7 +85,7 @@ const NotificationLogPage = () => {
   // Formik for sending notifications
   const formik = useFormik({
     initialValues: {
-      recipient: 'user@hackathon.com',
+      recipient: 'user@vendra.com',
       subject: '',
       body: '',
       type: 'EMAIL',

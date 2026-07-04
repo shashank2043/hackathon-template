@@ -109,7 +109,7 @@ const LandingPage = () => {
                     WebkitTextFillColor: 'transparent',
                   }}
                 >
-                  Enterprise Full-Stack Hackathon Template
+                  Enterprise Full-Stack Vendra Template
                 </Typography>
                 <Typography variant="h5" color="text.secondary" sx={{ fontWeight: 400, mb: 4, lineHeight: 1.5, maxWidth: 600 }}>
                   Build production-quality microservices and beautiful dashboard interfaces in minutes. Zero business logic, 100% reusable architecture.
@@ -215,7 +215,7 @@ const LandingPage = () => {
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center', mb: 6 }}>
             <Typography variant="h3" sx={{ fontWeight: 800, mb: 1 }}>
-              The Hackathon Stack
+              The Vendra Stack
             </Typography>
             <Typography variant="body1" color="text.secondary">
               Robust technologies aligned for performance, scale, and fast delivery.
@@ -250,7 +250,7 @@ const LandingPage = () => {
             Developer Feedback
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            Here's what mockup developers say about using this hackathon starter repository.
+            Here's what mockup developers say about using this Vendra starter repository.
           </Typography>
         </Box>
         <Grid container spacing={4}>
@@ -265,7 +265,7 @@ const LandingPage = () => {
                   <StarIcon color="warning" />
                 </Stack>
                 <Typography variant="body1" sx={{ fontStyle: 'italic', mb: 2 }}>
-                  "We saved at least 3 hours during our latest hackathon. We didn't have to code gateways, login flows, or Docker networks. We spun up this template and went straight to writing database models for our problem statement."
+                  "We saved at least 3 hours during our latest Vendra. We didn't have to code gateways, login flows, or Docker networks. We spun up this template and went straight to writing database models for our problem statement."
                 </Typography>
                 <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
                   Lead Software Architect, Dev Team Indigo
@@ -284,7 +284,7 @@ const LandingPage = () => {
                   <StarIcon color="warning" />
                 </Stack>
                 <Typography variant="body1" sx={{ fontStyle: 'italic', mb: 2 }}>
-                  "Highly polished UI components. The dark/light theme out of the box with Redux integration allowed us to demo a beautiful and cohesive dashboard product to the hackathon judges."
+                  "Highly polished UI components. The dark/light theme out of the box with Redux integration allowed us to demo a beautiful and cohesive dashboard product to the Vendra judges."
                 </Typography>
                 <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
                   Frontend Developer, Team ByteMasters
@@ -351,10 +351,10 @@ const LandingPage = () => {
             <Grid size={{ xs: 12, md: 4 }}>
               <Box display="flex" alignItems="center" gap={1} mb={2}>
                 <LayersIcon color="primary" />
-                <Typography variant="h6" sx={{ fontWeight: 800 }}>Hackathon Starter</Typography>
+                <Typography variant="h6" sx={{ fontWeight: 800 }}>Vendra Starter</Typography>
               </Box>
               <Typography variant="body2" color="text.secondary" sx={{ pr: 4 }}>
-                A highly optimized parent repository mapping enterprise Spring services to beautiful React client structures. Built for fast hackathon pivots.
+                A highly optimized parent repository mapping enterprise Spring services to beautiful React client structures. Built for fast Vendra pivots.
               </Typography>
             </Grid>
             <Grid size={{ xs: 6, md: 2 }}>
@@ -378,7 +378,7 @@ const LandingPage = () => {
           </Grid>
           <Divider sx={{ my: 4 }} />
           <Typography variant="body2" color="text.secondary" align="center">
-            © {new Date().getFullYear()} Hackathon Template Inc. All rights reserved.
+            © {new Date().getFullYear()} Vendra Template Inc. All rights reserved.
           </Typography>
         </Container>
       </Box>
